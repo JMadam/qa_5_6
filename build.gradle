@@ -1,5 +1,5 @@
 plugins {
-    id 'java-library'
+    id "java-library"
 }
 
 repositories {
@@ -7,21 +7,25 @@ repositories {
 }
 
 def selenideVersion = "5.20.1",
+    codebornePdfVersion = "1.5.1",
+    codeborneXlsVersion = "1.4.3",
+    hamcrestVersion = "1.3",
+    zip4jVersion = "1.3.2",
     junitVersion = "5.7.1"
 
 dependencies {
     testImplementation (
             "com.codeborne:selenide:$selenideVersion",
-            "com.codeborne:pdf-test:1.5.1",
-            "com.codeborne:xls-test:1.4.3",
-            "net.lingala.zip4j:zip4j:1.3.2",
-            "org.hamcrest:hamcrest-all:1.3",
+            "com.codeborne:pdf-test:$codebornePdfVersion",
+            "com.codeborne:xls-test:$codeborneXlsVersion",
+            "net.lingala.zip4j:zip4j:$zip4jVersion",
+            "org.hamcrest:hamcrest-all:$hamcrestVersion",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
 
 tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
+    options.encoding = "UTF-8"
 }
 
 test {
