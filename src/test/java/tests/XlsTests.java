@@ -18,6 +18,7 @@ public class XlsTests {
         String expectedData = "Gaston";
 
         XLS xls = getXls(xlsFilePath);
+
         assertThat(xls, XLS.containsText(expectedData));
     }
 
@@ -28,6 +29,7 @@ public class XlsTests {
 
         XLS xls = getXls(xlsFilePath);
         String actualData = xls.excel.getSheetAt(0).getRow(6).getCell(1).toString();
+
         assertThat(actualData, containsString(expectedData));
     }
     @Test
@@ -36,6 +38,7 @@ public class XlsTests {
         String expectedData = "Brumm";
 
         String actualData = readXlsxFromPath(xlsFilePath);
+
         assertThat(actualData, containsString(expectedData));
     }
 

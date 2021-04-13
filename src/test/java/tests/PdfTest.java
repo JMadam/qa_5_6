@@ -15,6 +15,7 @@ public class PdfTest {
         String expectedData = "Пример pdf";
 
         PDF pdf = getPdf(pdfFilePath);
+
         assertThat(pdf, PDF.containsText(expectedData));
     }
 
